@@ -1,0 +1,22 @@
+{
+  "name": "openlmis-tableau-wdc",
+  "description": "This is a sample Tableau Web Data Connector for the OpenLMIS API",
+  "version": "0.0.1",
+  "author": "jkondrat",
+  "contributors": [],
+  "license": "MIT",
+  "repository": "",
+  "homepage": "",
+  "keywords": [],
+  "dependencies": {
+    "express": "~4.13.*"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "files": [],
+  "scripts": {
+    "start": "node app.js"
+  }
+}
