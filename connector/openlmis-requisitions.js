@@ -28,12 +28,14 @@
 
       var hasAuth = isTokenValid(accessToken);
       updateUIWithAuthState(hasAuth, accessToken);
-      $("#connectbutton").click(function() {
+      $("#loginForm").submit(function(e){
+          e.preventDefault();
           doAuthRedirect();
       });
 
       // Create event listeners for when the user submits the form
-      $("#submitButton").click(function() {
+      $("#getDataForm").submit(function(e){
+          e.preventDefault();
           var options = {
             'programId': $("#program :selected").val()
           };
@@ -52,8 +54,10 @@
       } else if (tableau.authPurpose === tableau.authPurposeEnum.enduring) {
         appId = config.clientId; // This should be the Tableau Server appID
       }
+      var apiUrlWithAuthHeader = config.apiUrl.replace(/^([a-zA-Z][a-zA-Z0-9\.\+\-]*):\/\//,
+      "$1://" + $('#username').val() + ":" + $('#password').val() + "@");
 
-      var url = config.apiUrl + 'oauth/authorize?response_type=token&client_id=' + appId +
+      var url = apiUrlWithAuthHeader + 'oauth/authorize?response_type=token&client_id=' + appId +
               '&redirect_uri=' + config.redirectUri;
       window.location.href = url;
   }

@@ -25,13 +25,31 @@
   <div style="margin: auto; text-align: center; margin-top: 50px; max-width: 300px">
       <!-- These labels will toggle depending on whether the user is authenticated or not -->
       <p class="signedin">You are signed in!</p>
-      <p class="notsignedin">You are not signed in, please click below to sign in to your OpenLMIS account.</p>
 
-      <!-- The connect to OpenLMIS button will have a link added to it in the js-->
-      <a href="#" id="connectbutton" class="notsignedin"><img src="./logo-header.png" alt="Connect with OpenLMIS"/>Connect with OpenLMIS</a>
-      <br /><br />
 
-      <form class="signedin">
+      <form class="notsignedin" id="loginForm">
+          <div id="legend">
+              <legend class="">Please sign in to your OpenLMIS account.</legend>
+          </div>
+          <!-- Username -->
+          <label class="control-label"  for="username">Username</label>
+          <div class="controls">
+              <input type="text" id="username" name="username" placeholder="" class="input-xlarge" required>
+          </div>
+          <!-- Password-->
+          <label class="control-label" for="password">Password</label>
+          <div class="controls">
+              <input type="password" id="password" name="password" placeholder="" class="input-xlarge" required>
+          </div>
+          <br />
+          <!-- The connect to OpenLMIS button will have a link added to it in the js-->
+          <div class="controls">
+            <button type="submit" id="connectButton" class="btn btn-default"><img src="./logo-header.png" alt="Connect with OpenLMIS"/>Connect with OpenLMIS</button>
+          </div>
+          <br /><br />
+      </form>
+
+      <form class="signedin" id="getDataForm">
           <div class="form-group">
               <label for="program">Program Name:</label>
               <select class="form-control required" id="program"></select>
