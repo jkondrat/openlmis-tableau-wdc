@@ -6,7 +6,7 @@
   var config = {
       clientId: 'tableau-wdc',
       redirectUri: window.location.href,
-      apiUrl: 'https://test.openlmis.org/api/'
+      apiUrl: 'https://lmis-dev.health.gov.mw/api/'
   };
 
   // Gets fragment (the part after '#') or regular url parameter with given name.
